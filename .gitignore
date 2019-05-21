@@ -1,0 +1,4 @@
+.fdk/
+coverage/
+config/
+.report.json

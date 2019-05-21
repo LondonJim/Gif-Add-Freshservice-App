@@ -1,10 +1,15 @@
 {
   "platform-version": "2.0",
+
+  "whitelisted-domains": [
+    "https://api.giphy.com",
+    "https://www.google.com"
+  ],
   "product": {
     "freshservice": {
       "location": {
         "ticket_sidebar": {
-          "url": "template.html",
+          "url": "gif-selector.html",
           "icon": "icon.svg"
         }
       }
