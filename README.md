@@ -1,18 +1,45 @@
-## Your First App
+#Gif Selector
 
-Congratulations on creating your first app! Feel free to replace this text with your app's actual description.
+Freshservice widget that displays gifs based on user search option. Because of site origin restrictions, at this time clicking on them doesn't insert them into a message.
 
-### Folder structure explained
+## Installation
 
-    .
-    ├── README.md                  This file
-    ├── app                        Contains the files that are required for the front end component of the app
-    │   ├── app.js                 JS to render the dynamic portions of the app
-    │   ├── icon.svg               Sidebar icon SVG file. Should have a resolution of 64x64px.
-    │   ├── freshservice_logo.png  The Freshservice logo that is displayed in the app
-    │   ├── style.css              Style sheet for the app
-    │   ├── template.html          Contains the HTML required for the app’s UI
-    ├── config                     Contains the installation parameters and OAuth configuration
-    │   ├── iparams.json           Contains the parameters that will be collected during installation
-    │   └── iparam_test_data.json  Contains sample Iparam values that will used during testing
-    └── manifest.json              Contains app meta data and configuration information
+You must have a freshservice account to access the freshservice helpdesk site. Also
+
+```
+git clone git@github.com:LondonJim/Gif-Add-Freshservice-App.git
+```
+
+Add folder `config` and create files `iparam_test_data.json` and `iparams.json`. For dev and testing purposes only use the `iparam_test_data.json` file to place variables.
+
+This app uses an api that requires a key from https://developers.giphy.com/, it can be placed in this file:
+
+```
+{ "api_key": {
+    "key": "your key here",
+    "secure": true
+  }
+}
+```
+
+To run the app `fdk run`
+
+Open up your freshservice helpdesk site, navigate to tickets, click on a ticket, add `?dev=true` to the end of the url. The widget will appear on the sidebar.
+
+
+## Using the secret variable
+
+When using external sites/apis within this app you must use `request`. As you can see the secret variable has been passed in to url: `<%= iparam.api_key.key %>`
+
+```
+let gifUrl = this.url + "api_key=<%= iparam.api_key.key %>&q=" + searchItem + "&limit=9&offset=0&rating=G&lang=en"
+this.client.request.get(gifUrl)
+  .then(
+    function(gifsData) {
+      // do something with the gifsData
+    },
+    function(error) {
+      // do something with an error
+    }
+ )
+```
