@@ -23,7 +23,7 @@ class GifDisplay {
   _getGifs(e) {
     let that = this
     let searchItem = document.getElementById('searchItem').value
-    let gifUrl = this.url + "api_key=<%= iparam.api_key.key %>&q=" + searchItem + "&limit=9&offset=0&rating=G&lang=en"
+    let gifUrl = this.url + "api_key=<%= iparam.api_key.key %>&q=" + searchItem + "&limit=10&offset=0&rating=G&lang=en"
     this.client.request.get(gifUrl)
       .then(
         function(gifsData) {
