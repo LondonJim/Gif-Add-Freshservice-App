@@ -2,6 +2,9 @@
 
 Freshservice widget that displays gifs based on user search option. Because of site origin restrictions, at this time clicking on them doesn't insert them into a message.
 
+Create your own app here:
+https://developers.freshservice.com/docs/quick-start/
+
 ## Installation
 
 You must have a freshservice account to access the freshservice helpdesk site. Also
