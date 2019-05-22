@@ -19,8 +19,10 @@ form #search-submit {
   margin-top: 25px;
 }
 
-.gifs {
-  display: grid;
-  grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
-  grid-template-rows: [main-start] 100px [content-one] 100px [content-two] 100px [content-three] 100% [main-end];
+#gifs {
+  text-align: center;
+}
+
+#gifs img{
+  margin: 5px;
 }
