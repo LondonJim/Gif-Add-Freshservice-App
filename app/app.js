@@ -6,10 +6,10 @@ runMain = (client) => {
 $(document).ready( function() {
     app.initialized()
         .then(function(_client) {
-          var client = _client;
+          var client = _client
           client.events.on('app.activated',
             function() {
               runMain(client)
-            });
-        });
-});
+            })
+        })
+})
