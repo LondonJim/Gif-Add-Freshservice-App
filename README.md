@@ -1,4 +1,4 @@
-#Gif Selector
+# Gif Selector
 
 Freshservice widget that displays gifs based on user search option. Because of site origin restrictions, at this time clicking on them doesn't insert them into a message.
 
