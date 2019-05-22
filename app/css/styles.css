@@ -19,7 +19,17 @@ form #search-submit {
   margin-top: 25px;
 }
 
+.gif-select {
+  background: lightblue;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index:100;
+  height: 45px;
+}
+
 #gifs {
+  margin-top: 60px;
   text-align: center;
 }
 
